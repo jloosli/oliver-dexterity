@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Oliver L. Dexterity Tester</title>
+    <meta charset="UTF-8">
+    <title>Oliver L. Dexterity Tester</title>
 </head>
 
 <body>
-<section class="page3">
-	<h1 id="title">Test starts in...</h1>
-	<div id="text"></div>
-</section>
-<script>
+    <section class="page3">
+        <h1 id="title">Test starts in...</h1>
+        <div id="text"></div>
+    </section>
+    <script>
 var title=document.getElementById('title');
 var text=document.getElementById('text');
 var countdown_start=5;
@@ -22,32 +23,32 @@ var timer;
 var result;
 
 function countdown(start) {
-	if(start > 0) {
-		text.innerHTML=start;
-		setTimeout(function() {
-			countdown(start-1);
-		}, 1000);
-	} else {
-		text.innerHTML = '';
-		test('left');
-	}
+    if(start > 0) {
+        text.innerHTML=start;
+        setTimeout(function() {
+            countdown(start-1);
+        }, 1000);
+    } else {
+        text.innerHTML = '';
+        test('left');
+    }
 }
 
 function test(hand) {
-	setTimeout(function() {
-		text.innerHTML="GO!";
-		testing=true;
-		timer = Date.now();
-	}, ((Math.random() * (max_test - min_test)) + min_test) * 1000);
+    setTimeout(function() {
+        text.innerHTML="GO!";
+        testing=true;
+        timer = Date.now();
+    }, ((Math.random() * (max_test - min_test)) + min_test) * 1000);
 }
 
 function catchEvent(event) {
-	if(testing) {
-		console.log(event);
-		testing=false;
-		result = (Date.now() - timer) / 1000;
-		console.log(result, 'seconds');
-	}
+    if(testing) {
+        console.log(event);
+        testing=false;
+        result = (Date.now() - timer) / 1000;
+        console.log(result, 'seconds');
+    }
 }
 
 window.addEventListener('keypress', catchEvent, false);
@@ -57,4 +58,5 @@ countdown(countdown_start);
 
 </script>
 </body>
+
 </html>

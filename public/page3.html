@@ -4,6 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Oliver L. Dexterity Tester</title>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+    <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBNJNY1EiImCdjhQqb2bZEHzZo2ralIqdQ",
+    authDomain: "oliver-dexterity.firebaseapp.com",
+    databaseURL: "https://oliver-dexterity.firebaseio.com",
+    storageBucket: "oliver-dexterity.appspot.com",
+    messagingSenderId: "576315655284"
+  };
+  firebase.initializeApp(config);
+</script>
 </head>
 
 <body>
@@ -12,6 +25,9 @@
         <div id="text"></div>
     </section>
     <script>
+    // Get a reference to the database service
+var database = firebase.database();
+var tests_to_run=6;
 var title=document.getElementById('title');
 var text=document.getElementById('text');
 var countdown_start=5;
@@ -21,7 +37,21 @@ var test_length = 5;
 var testing = false;
 var timer;
 var result;
+var results=[];
 
+function run_tests(){
+    console.log(results);
+    if(results.length == tests_to_run){
+        finalize();
+        return;
+    }
+    if(results.length < (tests_to_run / 2) ) {
+        test('left');
+    } else {
+        test('right');
+    }
+
+}
 function countdown(start) {
     if(start > 0) {
         text.innerHTML=start;
@@ -30,11 +60,12 @@ function countdown(start) {
         }, 1000);
     } else {
         text.innerHTML = '';
-        test('left');
+        run_tests();
     }
 }
 
 function test(hand) {
+    title.innerHTML="Use your " + hand + " hand to tap the screen or keyboard when it flashes GO!"
     setTimeout(function() {
         text.innerHTML="GO!";
         testing=true;
@@ -48,7 +79,33 @@ function catchEvent(event) {
         testing=false;
         result = (Date.now() - timer) / 1000;
         console.log(result, 'seconds');
+        text.innerHTML="";
+        results.push(result);
+        run_tests();
     }
+}
+
+  var getQueryParameters = function(str) {
+	  return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];
+  }
+
+function finalize(){
+    //transfer to next page3
+    //save data to database
+
+    // Create a new post reference with an auto-generated id
+    var dataToSave = {
+    date: Date.now(),
+    tester: getQueryParameters(),
+    data: results
+};
+var newTestResultRef = database.ref('tests').push();
+newTestResultRef.set(dataToSave).then(function() {
+    debugger;
+    window.location='/page4.html';
+});
+    
+
 }
 
 window.addEventListener('keypress', catchEvent, false);

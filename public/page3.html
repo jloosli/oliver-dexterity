@@ -96,10 +96,13 @@
 
     function finalize() {
       // Create a new post reference with an auto-generated id
+      var leftAvg = results.slice(0,results.length/2).reduce(function (sum, n) {return sum + n}, 0)/(results.length/2);
+      var rightAvg = results.slice(results.length/2).reduce(function (sum, n) {return sum + n}, 0)/(results.length/2);
       var dataToSave = {
         date: Date.now(),
         tester: getQueryParameters(),
-        data: results
+        data: results,
+        avg: {left: leftAvg, right: rightAvg}
       };
       var newTestResultRef = database.ref('tests').push();
       newTestResultRef.set(dataToSave).then(function () {

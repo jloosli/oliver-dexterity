@@ -1,3 +1,5 @@
 .firebaserc
 .idea
 .vscode
+node_modules
+*.log

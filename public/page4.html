@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Oliver L. Dexterity Tester</title>
+	<meta charset="UTF-8">
+	<title>Oliver L. Dexterity Tester</title>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" defer></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js" defer></script>
+	<script src="/js/charts.js" defer></script>
+	<style>
+	* {box-sizing: border-box;}
+	.chart {
+		width: 45%;
+		display: inline-block;
+		height: 400px;
+	}
+	</style>
 </head>
 
 <body>
-<section class="page4">
-	<h1>THANK YOU</h1>
-	<p>You are the <span id="rank">5th</span> fastest <span id="stat-sex">boy</span>. 
-	Your <span id="hand">dominant</span> hand is fastest. So far, <span id="stat-winner-sex">girls</span>
-	are fastest.</p>
-	<p><a href="/">Try again</a></p>
+	<section class="page4">
+		<h1>THANK YOU</h1>
+		<p>You are the <span id="rank">5th</span> fastest <span id="stat-sex">boy</span>. Your <span id="hand">dominant</span> hand
+			is fastest. So far, <span id="stat-winner-sex">girls</span> are fastest.</p>
+		<h2>Boys vs. Girls</h2>
+		<div id="boy-girl" style="width: 400px; height: 120px;"></div>
+<h2>Lefties vs. Righties</h2>
+<div id="left" class="chart"></div>
+<div id="right" class="chart"></div>
+<p><a href="/">Try again</a></p>
+
 </section>
 </body>
 

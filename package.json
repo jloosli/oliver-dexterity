@@ -1,0 +1,22 @@
+{
+  "name": "oliver-dexterity",
+  "version": "1.0.0",
+  "description": "Science Fair Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jloosli/oliver-dexterity.git"
+  },
+  "author": "Oliver L.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jloosli/oliver-dexterity/issues"
+  },
+  "homepage": "https://github.com/jloosli/oliver-dexterity#readme",
+  "dependencies": {
+    "outdated-browser": "^1.0.2"
+  }
+}

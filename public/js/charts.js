@@ -46,3 +46,4 @@ function drawCharts() {
   var right_hand_chart = new google.visualization.ColumnChart(document.getElementById("right"));
   right_hand_chart.draw(right_hand_data, right_hand_options);
 }
+

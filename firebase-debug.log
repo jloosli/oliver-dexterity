@@ -1,0 +1,14 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/bin/nodejs /home/jloosli/.npm-global/bin/firebase serve
+[debug] CLI Version:  3.2.0
+[debug] Platform:     linux
+[debug] Node Version: v6.9.2
+[debug] Time:         Sun Jan 01 2017 14:56:53 GMT-0700 (MST)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: /media/jloosli/DATAPART1/projects/oliver-dexterity
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:5000

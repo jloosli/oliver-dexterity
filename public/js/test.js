@@ -48,11 +48,12 @@ function countdown(start) {
 }
 
 function test(hand) {
+  updateProgress();
   title.innerHTML = "Use your <span class='text-danger'>" + hand + "</span> hand to tap the screen or keyboard when it flashes GO!";
-  document.body.className=hand;
+  document.body.className = hand;
   setTimeout(function () {
     text.innerHTML = "GO!";
-    document.body.style="background: slateblue; color: white;"
+    document.body.style = "background: slateblue; color: white;"
     testing = true;
     timer = Date.now();
   }, ((Math.random() * (max_test - min_test)) + min_test) * 1000);
@@ -62,7 +63,7 @@ function catchEvent(event) {
   if (testing) {
     console.log(event);
     testing = false;
-    document.body.style="background: white; color: black;"
+    document.body.style = "background: white; color: black;"
     result = (Date.now() - timer) / 1000;
     console.log(result, 'seconds');
     text.innerHTML = "";
@@ -78,6 +79,12 @@ var getQueryParameters = function (str) {
     .map(function (n) { return n = n.split("="), this[n[0]] = n[1], this }
       .bind({})
     )[0];
+}
+
+function updateProgress() {
+  var pct = Math.round(results.length / (max_test+1) * 100);
+  document.querySelector('#test-progress span').innerHTML = pct + '%';
+  document.querySelector('.progress-wrapper progress').value = pct;
 }
 
 function finalize() {

@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Oliver L. Dexterity Tester</title>
-<link rel="stylesheet" href="/modules/outdated-browser/outdatedbrowser/outdatedbrowser.min.css">
-<script src="/modules/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Oliver L. Dexterity Tester</title>
+    <link rel="stylesheet" href="/modules/outdated-browser/outdatedbrowser/outdatedbrowser.min.css">
+    <script src="/modules/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/styles.css">
 </head>
 
 <body>
-<section class="page1 container">
-	<h1>Oliver L. science fair project</h1>
-	<p>My science fair project is testing people about their dexterity</p>
-	<p>On the next page you will choose your gender and whether you are a righty or a lefty.</p>
-	<p>After that you will be tested 3 times on your dominant hand and 3 times on your non-dominant hand. Just press any key when the screen flashes GO!</p>
-	<button onclick="window.location='/page2.html'">Next</button>
+    <section class="page1 container">
+        <h1>Oliver L. science fair project</h1>
+        <p>My science fair project is testing people about their dexterity</p>
+        <p>On the next page you will choose your gender and whether you are a righty or a lefty.</p>
+        <p>After that you will be tested 3 times on your dominant hand and 3 times on your non-dominant hand. Just press any
+            key when the screen flashes GO!</p>
+        <button onclick="window.location='/page2.html'">Next</button>
 </section>
 <div id="outdated"></div>
 <script>
-//event listener: DOM ready
-function addLoadEvent(func) {
-    var oldonload = window.onload;
-    if (typeof window.onload != 'function') {
-        window.onload = func;
-    } else {
-        window.onload = function() {
-            if (oldonload) {
-                oldonload();
+    //event listener: DOM ready
+    function addLoadEvent(func) {
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function') {
+            window.onload = func;
+        } else {
+            window.onload = function () {
+                if (oldonload) {
+                    oldonload();
+                }
+                func();
             }
-            func();
         }
     }
-}
-//call plugin function after DOM ready
-addLoadEvent(function(){
-    outdatedBrowser({
-        bgColor: '#f25648',
-        color: '#ffffff',
-        lowerThan: 'filter',
-        languagePath: '/outdatedbrowser/lang/en.html'
-    })
-});
+    //call plugin function after DOM ready
+    addLoadEvent(function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'filter',
+            languagePath: '/outdatedbrowser/lang/en.html'
+        })
+    });
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

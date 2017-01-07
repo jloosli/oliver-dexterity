@@ -82,9 +82,11 @@ var getQueryParameters = function (str) {
 }
 
 function updateProgress() {
-  var pct = Math.round(results.length / (max_test+1) * 100);
-  document.querySelector('#test-progress span').innerHTML = pct + '%';
-  document.querySelector('.progress-wrapper progress').value = pct;
+  var pct = Math.round(results.length / (max_test + 1) * 100);
+  var bar = document.querySelector('.progress-bar');
+  bar.innerHTML = pct + '%';
+  bar.style = "width: " + bar.innerHTML;
+  bar.setAttribute('aria-valuenow', pct);
 }
 
 function finalize() {

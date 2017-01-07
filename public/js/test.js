@@ -51,6 +51,9 @@ function test(hand) {
   updateProgress();
   title.innerHTML = "Use your <span class='text-danger'>" + hand + "</span> hand to tap the screen or keyboard when it flashes GO!";
   document.body.className = hand;
+  if(hand == 'right') {
+    document.querySelector('.d-flex').classList.add('flex-row-reverse');
+  }
   setTimeout(function () {
     text.innerHTML = "GO!";
     document.body.style = "background: slateblue; color: white;"

@@ -17,8 +17,8 @@
   text-decoration: underline;
 }
 .hand { width: 25vw; display: none;}
-.left .hand { transform: scaleX(-1); display: block; float: left;}
-.right .hand {display: block; float: right;}
+.left img.hand { transform: scaleX(-1); display: block; float: left;}
+.right img.hand {display: block; float: right;}
 .left #title { text-align: left;}
 .right #title {
   text-align: right;
@@ -31,20 +31,17 @@
   transform: translate(-50%, -50%);
 }
 
-.progress-wrapper {
-  position: fixed;
-  bottom: 1rem;
-}
 
 </style>
 
 <body>
   <section class="page3 container">
     <h1 id="title">Test starts in...</h1>
-
-    <img class="hand" src="/images/hand.svg" />
+    <div class="d-flex align-content-center" style="height: 100vh">
+      <img class="hand" src="/images/hand.svg" />
+    </div>
     <div id="text"></div>
-    <div class="progress-wrapper container">
+    <div class="progress-wrapper container fixed-bottom mb-3">
       <div class="progress">
         <div class="progress-bar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
       </div>
